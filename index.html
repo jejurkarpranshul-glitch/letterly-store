@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LETTERLY | Your Letter. Your Style.</title>
+
+<style>
+:root {
+  --gold: #d7b56d;
+  --black: #090909;
+  --panel: #171717;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 25px 15px;
+  border-bottom: 1px solid #594522;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 36px;
+  letter-spacing: 9px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #ddd;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+  min-height: 310px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: radial-gradient(ellipse, #4b3820, #090909 75%);
+}
+
+.hero h1 {
+  color: var(--gold);
+  font-size: clamp(30px, 6vw, 55px);
+  line-height: 1.2;
+}
+
+.hero p { margin: 15px 0; color: #ddd; }
+
+.gold-button {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gold-button:hover { background: #f1d69b; }
+
+section { padding: 55px 20px; }
+
+.section-title {
+  text-align: center;
+  color: var(--gold);
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.customiser {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.preview-box, .options-box {
+  background: var(--panel);
+  border: 1px solid #705a32;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+}
+
+.keychain {
+  width: 165px;
+  height: 165px;
+  border: 7px solid #e5c77e;
+  border-radius: 35px;
+  display: grid;
+  place-items: center;
+  font-size: 105px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 30px #d7b56d44;
+  background-color: #e77da9;
+  background-image: radial-gradient(#ffffff88 1px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.preview-caption { color: #aaa; margin-top: 25px; }
+
+.options-box h3 { color: var(--gold); margin-bottom: 15px; }
+
+label {
+  display: block;
+  color: #e8d3a6;
+  margin: 16px 0 6px;
+  font-size: 14px;
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #66512d;
+  background: #252525;
+  color: white;
+  font-size: 15px;
+}
+
+textarea { resize: vertical; }
+
+.full-button { width: 100%; margin-top: 18px; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 950px;
+  margin: auto;
+}
+
+.product {
+  background: var(--panel);
+  border: 1px solid #443820;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+}
+
+.product-art {
+  height: 130px;
+  display: grid;
+  place-items: center;
+  font-size: 65px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product h3 { color: var(--gold); }
+.product p { color: #aaa; font-size: 13px; margin: 8px 0; }
+.product button { margin-top: 12px; }
+
+.about {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  color: #ccc;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #594522;
+  color: #999;
+}
+
+footer strong { color: var(--gold); }
+
+@media(max-width: 700px) {
+  .customiser, .gallery { grid-template-columns: 1fr; }
+  nav { gap: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">LETTERLY</div>
+  <div class="tagline">YOUR LETTER. YOUR STYLE.</div>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#customise">Customise</a>
+  <a href="#collection">Collection</a>
+  <a href="#about">About</a>
+</nav>
+
+<div class="hero" id="home">
+  <h1>A LITTLE LETTER.<br>A LOT OF PERSONALITY.</h1>
+  <p>Create a personalised keychain that feels like YOU.</p>
+  <a class="gold-button" href="#customise">DESIGN YOUR KEYCHAIN</a>
+</div>
+
+<section id="customise">
+  <h2 class="section-title">DESIGN YOUR OWN</h2>
+  <p class="section-subtitle">Your initial. Your colours. Your creativity.</p>
+
+  <div class="customiser">
+
+    <div class="preview-box">
+      <div class="keychain" id="keychain">A</div>
+      <p class="preview-caption">YOUR LIVE KEYCHAIN PREVIEW</p>
+    </div>
+
+    <div class="options-box">
+      <h3>Customise your design ✨</h3>
+
+      <label for="customerName">Your name</label>
+      <input id="customerName" type="text" placeholder="Enter your name">
+
+      <label for="alphabet">1. Choose your letter</label>
+      <select id="alphabet"></select>
+
+      <label for="colour">2. Choose your colour</label>
+      <select id="colour">
+        <option value="#e77da9">Bubblegum Pink</option>
+        <option value="#77bde8">Ocean Blue</option>
+        <option value="#a98ae5">Lavender Purple</option>
+        <option value="#79bd91">Mint Green</option>
+        <option value="#d5a93e">Golden Yellow</option>
+        <option value="#eeeeee">Pearl White</option>
+        <option value="#282828">Midnight Black</option>
+        <option value="#e88c59">Peach</option>
+      </select>
+
+      <label for="style">3. Choose your style</label>
+      <select id="style">
+        <option value="glitter">Glitter Sparkle</option>
+        <option value="floral">Floral</option>
+        <option value="marble">Marble Magic</option>
+        <option value="classic">Classic</option>
+      </select>
+
+      <label for="decoration">4. Choose your decoration</label>
+      <select id="decoration">
+        <option>Gold flakes</option>
+        <option>Silver flakes</option>
+        <option>Mini charms</option>
+        <option>No decoration</option>
+      </select>
+
+      <label for="notes">Extra customisation (optional)</label>
+      <textarea id="notes" rows="3"
+        placeholder="Tell us any other details..."></textarea>
+
+      <button class="gold-button full-button" onclick="updatePreview()">
+        UPDATE MY DESIGN
+      </button>
+
+      <button class="gold-button full-button" onclick="sendWhatsApp()">
+        ORDER ON WHATSAPP
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="collection">
+  <h2 class="section-title">OUR COLLECTION</h2>
+  <p class="section-subtitle">A little inspiration for your next design.</p>
+
+  <div class="gallery">
+    <div class="product">
+      <div class="product-art" style="background:#49321e">✨ A</div>
+      <h3>Classic Gold</h3>
+      <p>Elegant and timeless.</p>
+      <button class="gold-button"
+        onclick="chooseStyle('classic','#d5a93e')">TRY THIS</button>
+    </div>
+
+    <div class="product">
+      <div class="product-art" style="background:#592d45">💗 B</div>
+      <h3>Pink Sparkle</h3>
+      <p>Sweet with a little shine.</p>
+      <button class="gold-button"
+        onclick="chooseStyle('glitter','#e77da9')">TRY THIS</button>
+    </div>
+
+    <div class="product">
+      <div class="product-art" style="background:#315443">🌸 C</div>
+      <h3>Floral Initial</h3>
+      <p>Inspired by little flowers.</p>
+      <button class="gold-button"
+        onclick="chooseStyle('floral','#79bd91')">TRY THIS</button>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">ABOUT LETTERLY</h2>
+  <div class="about">
+    <p>
+      At LETTERLY, every letter tells a story.
+      We love turning simple initials into personalised
+      little accessories made to express your style.
+    </p>
+    <br>
+    <p><strong>Personalised with love ♡</strong></p>
+  </div>
+</section>
+
+<footer>
+  <strong>LETTERLY</strong>
+  <p>YOUR LETTER. YOUR STYLE.</p>
+  <p>© 2026 LETTERLY. Personalised with love.</p>
+</footer>
+
+<script>
+
+// ADD YOUR STORE'S WHATSAPP NUMBER HERE.
+// Use country code 91, without + or spaces.
+const STORE_WHATSAPP = "917016342673";
+
+const alphabet = document.getElementById("alphabet");
+
+for (let i = 65; i <= 90; i++) {
+  const letter = String.fromCharCode(i);
+  const option = document.createElement("option");
+  option.value = letter;
+  option.textContent = letter;
+  alphabet.appendChild(option);
+}
+
+function updatePreview() {
+  const letter = document.getElementById("keychain");
+  const colour = document.getElementById("colour").value;
+  const style = document.getElementById("style").value;
+
+  letter.textContent = alphabet.value;
+  letter.style.backgroundColor = colour;
+
+  if (style === "glitter") {
+    letter.style.backgroundImage =
+      "radial-gradient(#ffffffaa 1px, transparent 2px)";
+    letter.style.backgroundSize = "9px 9px";
+  } else if (style === "floral") {
+    letter.style.backgroundImage =
+      "radial-gradient(circle, #ffffffcc 3px, transparent 4px)";
+    letter.style.backgroundSize = "20px 20px";
+  } else if (style === "marble") {
+    letter.style.backgroundImage =
+      "repeating-linear-gradient(45deg, transparent 0 8px, #ffffff55 9px 12px, transparent 13px 20px)";
+    letter.style.backgroundSize = "auto";
+  } else {
+    letter.style.backgroundImage = "none";
+  }
+}
+
+function chooseStyle(style, colour) {
+  document.getElementById("style").value = style;
+  document.getElementById("colour").value = colour;
+  updatePreview();
+
+  document.getElementById("customise").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function sendWhatsApp() {
+  const phone = STORE_WHATSAPP.replace(/\D/g, "");
+
+  if (phone.length < 10 || phone.includes("91+7016342673")) {
+    alert("The store owner needs to add the store WhatsApp number first.");
+    return;
+  }
+
+  const name = document.getElementById("customerName").value.trim();
+
+  if (!name) {
+    alert("Please enter your name first!");
+    document.getElementById("customerName").focus();
+    return;
+  }
+
+  const colour = document.getElementById("colour")
+    .selectedOptions[0].text;
+
+  const style = document.getElementById("style")
+    .selectedOptions[0].text;
+
+  const decoration = document.getElementById("decoration").value;
+
+  const notes = document.getElementById("notes").value.trim();
+
+  const message =
+    "✨ NEW LETTERLY ORDER ✨\n\n" +
+    "Customer: " + name + "\n" +
+    "Letter: " + alphabet.value + "\n" +
+    "Colour: " + colour + "\n" +
+    "Style: " + style + "\n" +
+    "Decoration: " + decoration + "\n" +
+    "Extra details: " + (notes || "None") + "\n\n" +
+    "I'd like to order this customised keychain!";
+
+  const url =
+    "https://wa.me/" + phone +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+alphabet.addEventListener("change", updatePreview);
+document.getElementById("colour").addEventListener("change", updatePreview);
+document.getElementById("style").addEventListener("change", updatePreview);
+document.getElementById("decoration").addEventListener("change", updatePreview);
+
+updatePreview();
+
+</script>
+
+</body>
+</html>
